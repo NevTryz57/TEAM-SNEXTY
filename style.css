@@ -38,3 +38,95 @@ footer{padding:40px 7%;border-top:1px solid rgba(255,255,255,.07);display:flex;j
  .cards{grid-template-columns:repeat(2,1fr)}.avatar{height:130px}.match{grid-template-columns:1fr;gap:10px}.status{width:max-content}.achievement{grid-template-columns:55px 1fr}.achievement>strong{display:none}
  .section{padding:70px 7%}h2{font-size:30px}footer{display:block}footer p{margin-top:20px}
 }
+/* ===== SNEXTY ESPORTS BACKGROUND ===== */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+
+    background-image:
+        linear-gradient(
+            rgba(70, 140, 220, 0.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(70, 140, 220, 0.035) 1px,
+            transparent 1px
+        );
+
+    background-size: 45px 45px;
+}
+
+/* Blue glow kanan atas */
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    top: -180px;
+    right: -180px;
+
+    background: radial-gradient(
+        circle,
+        rgba(0, 110, 255, 0.25),
+        transparent 70%
+    );
+
+    filter: blur(20px);
+    animation: snextyGlow 7s ease-in-out infinite alternate;
+
+    z-index: -1;
+}
+
+/* Blue glow kiri bawah */
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    bottom: -200px;
+    left: -160px;
+
+    background: radial-gradient(
+        circle,
+        rgba(0, 80, 180, 0.18),
+        transparent 70%
+    );
+
+    filter: blur(25px);
+    animation: snextyGlow2 9s ease-in-out infinite alternate;
+
+    z-index: -1;
+}
+
+/* Animasi glow */
+@keyframes snextyGlow {
+    from {
+        transform: translate(0, 0) scale(1);
+    }
+
+    to {
+        transform: translate(-80px, 70px) scale(1.25);
+    }
+}
+
+@keyframes snextyGlow2 {
+    from {
+        transform: translate(0, 0) scale(1);
+    }
+
+    to {
+        transform: translate(70px, -50px) scale(1.2);
+    }
+}
+
+/* Efek cahaya pada judul */
+.hero h1 {
+    text-shadow: 0 0 25px rgba(80, 160, 255, 0.15);
+}
+
+.hero h1 strong {
+    text-shadow: 0 0 35px rgba(80, 160, 255, 0.25);
+}
