@@ -821,3 +821,29 @@ footer{padding:40px 7%;border-top:1px solid rgba(255,255,255,.07);display:flex;j
     display: block;
     margin: 15px 0;
 }
+
+.achievement-showcase {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.achievement-image {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    margin: 15px 0;
+    border-radius: 15px;
+}
+
+.achievement-image img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    box-sizing: border-box;
+}
