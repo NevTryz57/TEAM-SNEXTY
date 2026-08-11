@@ -793,3 +793,24 @@ footer{padding:40px 7%;border-top:1px solid rgba(255,255,255,.07);display:flex;j
         transform: translateX(35%) rotate(10deg);
     }
 }
+
+.roster-showcase {
+    overflow: hidden;
+}
+
+.roster-image {
+    margin: 25px auto 5px;
+    width: 92%;
+    border: 2px solid rgba(0, 140, 255, 0.8);
+    border-radius: 18px;
+    padding: 5px;
+    box-shadow: 0 0 25px rgba(0, 120, 255, 0.35);
+    overflow: hidden;
+}
+
+.roster-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 13px;
+}
