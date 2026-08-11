@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>NevTryz — TEAM SNEXTY</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      margin: 0;
+      background: #020814;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    .profile-page {
+      min-height: 100vh;
+      padding: 35px 7%;
+      box-sizing: border-box;
+    }
+
+    .back {
+      display: inline-block;
+      margin-bottom: 30px;
+      color: #8dbfff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .ml-profile {
+      max-width: 1000px;
+      margin: auto;
+      border: 1px solid rgba(80,160,255,.25);
+      border-radius: 25px;
+      overflow: hidden;
+      background: rgba(5,20,40,.85);
+      box-shadow: 0 0 50px rgba(0,100,255,.15);
+    }
+
+    .profile-title {
+      padding: 35px;
+      background: linear-gradient(135deg, #06295c, #020814);
+    }
+
+    .profile-title small {
+      color: #6daeff;
+      letter-spacing: .2em;
+    }
+
+    .profile-title h1 {
+      font-size: clamp(40px, 8vw, 75px);
+      margin: 10px 0;
+    }
+
+    .profile-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      padding: 30px;
+    }
+
+    .info {
+      padding: 25px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.08);
+    }
+
+    .info h2 {
+      margin-top: 0;
+      color: #75b5ff;
+    }
+
+    .stat {
+      display: flex;
+      justify-content: space-between;
+      padding: 13px 0;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .stat:last-child {
+      border-bottom: 0;
+    }
+
+    @media(max-width:700px) {
+      .profile-content {
+        grid-template-columns: 1fr;
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="profile-page">
+
+    <a href="index.html" class="back">← KEMBALI KE ROSTER</a>
+
+    <section class="ml-profile">
+
+      <div class="profile-title">
+        <small>TEAM SNEXTY • MOBILE LEGENDS</small>
+        <h1>NevTryz</h1>
+        <p>GOLD LANER</p>
+      </div>
+
+      <div class="profile-content">
+
+        <div class="info">
+          <h2>PROFILE ML</h2>
+
+          <div class="stat">
+            <span>Nickname</span>
+            <strong>NevTryz</strong>
+          </div>
+
+          <div class="stat">
+            <span>Role</span>
+            <strong>Gold Laner</strong>
+          </div>
+
+          <div class="stat">
+            <span>Team</span>
+            <strong>TEAM SNEXTY</strong>
+          </div>
+
+          <div class="stat">
+            <span>Game</span>
+            <strong>Mobile Legends</strong>
+          </div>
+        </div>
+
+        <div class="info">
+          <h2>PLAYER INFO</h2>
+
+          <div class="stat">
+            <span>Hero Favorit</span>
+            <strong>—</strong>
+          </div>
+
+          <div class="stat">
+            <span>Rank Tertinggi</span>
+            <strong>—</strong>
+          </div>
+
+          <div class="stat">
+            <span>Win Rate</span>
+            <strong>—</strong>
+          </div>
+
+          <div class="stat">
+            <span>Achievement</span>
+            <strong>—</strong>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+</body>
+</html>
