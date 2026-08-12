@@ -1057,3 +1057,198 @@ body::after {
         font-size: 18px;
     }
 }
+
+.match-card {
+    position: relative;
+    width: 100%;
+    min-height: 420px;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 60px 7%;
+    border-radius: 24px;
+
+    background:
+        linear-gradient(90deg,
+            #031326 0%,
+            #061d38 35%,
+            #020b18 50%,
+            #061d38 65%,
+            #031326 100%);
+
+    border: 1px solid rgba(0, 153, 255, .25);
+
+    box-shadow:
+        0 0 40px rgba(0, 110, 255, .12),
+        inset 0 0 80px rgba(0, 100, 255, .08);
+}
+
+/* GRID HORIZONTAL */
+.match-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            transparent 0px,
+            transparent 90px,
+            rgba(0, 140, 255, .06) 91px,
+            transparent 92px
+        );
+
+    opacity: .5;
+    pointer-events: none;
+}
+
+/* GARIS CAHAYA BERGERAK */
+.match-card::after {
+    content: "";
+    position: absolute;
+
+    width: 45%;
+    height: 2px;
+
+    top: 50%;
+    left: -45%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #008cff,
+        #6bc7ff,
+        transparent
+    );
+
+    box-shadow: 0 0 18px #008cff;
+
+    animation: lightMove 5s linear infinite;
+}
+
+@keyframes lightMove {
+    0% {
+        left: -45%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+/* TEAM */
+.match-team {
+    position: relative;
+    z-index: 2;
+
+    width: 35%;
+
+    text-align: center;
+}
+
+/* NAMA TIM */
+.team-name {
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: 2px;
+
+    color: white;
+
+    text-shadow:
+        0 0 10px rgba(0, 140, 255, .4),
+        0 0 25px rgba(0, 140, 255, .15);
+}
+
+/* VS TENGAH */
+.match-vs {
+    position: relative;
+    z-index: 3;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100px;
+    height: 100px;
+
+    border-radius: 50%;
+
+    background: rgba(2, 15, 30, .8);
+
+    border: 1px solid rgba(0, 153, 255, .45);
+
+    box-shadow:
+        0 0 20px rgba(0, 140, 255, .3),
+        inset 0 0 25px rgba(0, 100, 255, .12);
+}
+
+.match-vs span {
+    font-size: 28px;
+    font-weight: 900;
+    color: #ffffff;
+
+    text-shadow:
+        0 0 12px #008cff;
+}
+
+/* CAHAYA DI BELAKANG VS */
+.match-vs::before {
+    content: "";
+
+    position: absolute;
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle,
+        rgba(0, 140, 255, .22),
+        transparent 65%
+    );
+
+    animation: pulseGlow 2.5s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        transform: scale(.8);
+        opacity: .5;
+    }
+
+    50% {
+        transform: scale(1.15);
+        opacity: 1;
+    }
+}
+
+/* RESPONSIVE HP */
+@media (max-width: 700px) {
+
+    .match-card {
+        min-height: 260px;
+        padding: 35px 15px;
+    }
+
+    .team-name {
+        font-size: 18px;
+        letter-spacing: 1px;
+    }
+
+    .match-vs {
+        width: 55px;
+        height: 55px;
+    }
+
+    .match-vs span {
+        font-size: 17px;
+    }
+
+    .match-vs::before {
+        width: 100px;
+        height: 100px;
+    }
+                        }
