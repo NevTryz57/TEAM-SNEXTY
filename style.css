@@ -1267,3 +1267,202 @@ body::after {
     color: white;
     text-shadow: 0 0 15px rgba(0, 140, 255, .8);
 }
+
+/* =========================
+   MATCH CENTER - ESPORTS
+   ========================= */
+
+.match-card {
+    position: relative;
+    min-height: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    border-radius: 24px;
+    border: 1px solid rgba(0, 140, 255, 0.25);
+    background: #020b18;
+    box-shadow:
+        0 0 30px rgba(0, 100, 255, 0.12),
+        inset 0 0 60px rgba(0, 80, 180, 0.08);
+}
+
+/* Background animasi */
+.match-bg {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 20% 50%, rgba(0, 130, 255, .20), transparent 35%),
+        radial-gradient(circle at 80% 50%, rgba(0, 80, 255, .18), transparent 35%),
+        linear-gradient(90deg, #020b18, #06172b, #020b18);
+}
+
+/* Garis cahaya bergerak */
+.match-bg::before {
+    content: "";
+    position: absolute;
+    width: 45%;
+    height: 2px;
+    top: 25%;
+    left: -50%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 170, 255, .8),
+        transparent
+    );
+    box-shadow: 0 0 15px rgba(0, 170, 255, .7);
+    animation: matchLight 5s linear infinite;
+}
+
+.match-bg::after {
+    content: "";
+    position: absolute;
+    width: 35%;
+    height: 2px;
+    bottom: 25%;
+    right: -40%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 110, 255, .7),
+        transparent
+    );
+    box-shadow: 0 0 15px rgba(0, 110, 255, .6);
+    animation: matchLightReverse 6s linear infinite;
+}
+
+@keyframes matchLight {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(330%);
+    }
+}
+
+@keyframes matchLightReverse {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-330%);
+    }
+}
+
+/* Tim kiri & kanan */
+.match-team {
+    position: relative;
+    z-index: 2;
+    width: 32%;
+    text-align: center;
+}
+
+.team-name {
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #fff;
+    text-shadow: 0 0 18px rgba(255,255,255,.15);
+}
+
+/* Tengah */
+.match-center {
+    position: relative;
+    z-index: 3;
+    width: 180px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.match-status {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #5dbbff;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    animation: statusGlow 2s ease-in-out infinite alternate;
+}
+
+.match-vs {
+    font-size: 42px;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1;
+    text-shadow:
+        0 0 10px rgba(255,255,255,.3),
+        0 0 25px rgba(0,140,255,.4);
+}
+
+.match-score {
+    margin-top: 18px;
+    font-size: 27px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    color: #fff;
+    text-shadow: 0 0 18px rgba(0,160,255,.8);
+    animation: scorePulse 2.5s ease-in-out infinite;
+}
+
+@keyframes statusGlow {
+    from {
+        opacity: .65;
+        text-shadow: 0 0 5px rgba(0,160,255,.2);
+    }
+
+    to {
+        opacity: 1;
+        text-shadow: 0 0 15px rgba(0,160,255,.9);
+    }
+}
+
+@keyframes scorePulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.06);
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    .match-card {
+        min-height: 260px;
+        border-radius: 18px;
+    }
+
+    .team-name {
+        font-size: 20px;
+        letter-spacing: 1px;
+    }
+
+    .match-center {
+        width: 110px;
+    }
+
+    .match-status {
+        font-size: 8px;
+        letter-spacing: 2px;
+        margin-bottom: 8px;
+    }
+
+    .match-vs {
+        font-size: 28px;
+    }
+
+    .match-score {
+        margin-top: 12px;
+        font-size: 21px;
+        letter-spacing: 2px;
+    }
+ }
