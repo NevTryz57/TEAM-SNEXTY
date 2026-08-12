@@ -977,3 +977,83 @@ body::after {
         background-position: 50px 50px;
     }
 }
+
+/* =========================
+   MATCH VS HORIZONTAL
+========================= */
+
+.match-card {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 120px 1fr;
+    align-items: center;
+    gap: 20px;
+    padding: 45px 30px;
+    box-sizing: border-box;
+}
+
+/* Tim kiri */
+.match-card .team-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* VS tengah */
+.match-card .vs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 42px;
+    font-weight: 800;
+}
+
+/* Tim kanan */
+.match-card .team-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Logo */
+.match-card .team-left img,
+.match-card .team-right img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 18px;
+}
+
+/* Nama tim */
+.match-card .team-left h2,
+.match-card .team-right h2 {
+    margin: 0;
+    text-align: center;
+}
+
+/* Jangan ubah jadi kolom di HP */
+@media (max-width: 600px) {
+
+    .match-card {
+        grid-template-columns: 1fr 60px 1fr;
+        gap: 8px;
+        padding: 30px 10px;
+    }
+
+    .match-card .team-left img,
+    .match-card .team-right img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .match-card .vs {
+        font-size: 26px;
+    }
+
+    .match-card .team-left h2,
+    .match-card .team-right h2 {
+        font-size: 18px;
+    }
+}
