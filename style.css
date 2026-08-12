@@ -867,3 +867,11 @@ footer{padding:40px 7%;border-top:1px solid rgba(255,255,255,.07);display:flex;j
     border-radius: 12px;
     box-sizing: border-box;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 80px;
+}
