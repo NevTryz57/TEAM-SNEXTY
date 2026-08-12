@@ -892,3 +892,88 @@ section {
   display: flex;
   flex-direction: column;
 }
+
+/* ===== ANIMATED MATCH BACKGROUND ===== */
+
+body {
+    position: relative;
+    overflow-x: hidden;
+    background: #020b18;
+}
+
+/* Cahaya biru bergerak */
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    pointer-events: none;
+    filter: blur(100px);
+    opacity: 0.18;
+    z-index: -1;
+}
+
+body::before {
+    background: #008cff;
+    top: -180px;
+    left: -150px;
+    animation: glowMove 8s ease-in-out infinite alternate;
+}
+
+body::after {
+    background: #004cff;
+    right: -180px;
+    bottom: -200px;
+    animation: glowMove2 10s ease-in-out infinite alternate;
+}
+
+@keyframes glowMove {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(180px, 120px);
+    }
+}
+
+@keyframes glowMove2 {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(-160px, -100px);
+    }
+}
+
+/* Garis/grid tipis */
+.match-center,
+.matches-section {
+    position: relative;
+}
+
+.match-center::before,
+.matches-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(0, 140, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 140, 255, 0.035) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: gridMove 12s linear infinite;
+}
+
+@keyframes gridMove {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 50px 50px;
+    }
+}
