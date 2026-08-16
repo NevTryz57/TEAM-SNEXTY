@@ -1466,3 +1466,315 @@ body::after {
         letter-spacing: 2px;
     }
 }
+
+/* =================================
+   TEAM JERSEY - PREMIUM LIGHT
+================================= */
+
+.jersey-section {
+    position: relative;
+    padding: 80px 20px;
+    overflow: hidden;
+}
+
+/* Cahaya besar di background */
+.jersey-section::before {
+    content: "";
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    background: radial-gradient(
+        circle,
+        rgba(0, 140, 255, 0.16) 0%,
+        rgba(0, 100, 255, 0.08) 30%,
+        transparent 70%
+    );
+
+    filter: blur(20px);
+    animation: jerseyGlow 5s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+
+@keyframes jerseyGlow {
+    0% {
+        transform: translate(-50%, -50%) scale(.85);
+        opacity: .55;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1.15);
+        opacity: 1;
+    }
+}
+
+/* Card */
+.jersey-card {
+    position: relative;
+    max-width: 900px;
+    min-height: 390px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+
+    padding: 45px;
+    box-sizing: border-box;
+
+    overflow: hidden;
+    isolation: isolate;
+
+    border-radius: 24px;
+    border: 1px solid rgba(0, 150, 255, .25);
+
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(0, 130, 255, .14),
+            transparent 48%
+        ),
+        linear-gradient(
+            110deg,
+            #020817 0%,
+            #06203b 45%,
+            #020817 100%
+        );
+
+    box-shadow:
+        0 0 35px rgba(0, 110, 255, .10),
+        inset 0 0 70px rgba(0, 100, 255, .06);
+}
+
+/* Cahaya horizontal berjalan */
+.jersey-card::before {
+    content: "";
+    position: absolute;
+
+    width: 35%;
+    height: 150%;
+
+    top: -25%;
+    left: -45%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(70, 190, 255, .12),
+        rgba(120, 210, 255, .28),
+        rgba(70, 190, 255, .12),
+        transparent
+    );
+
+    filter: blur(12px);
+    transform: rotate(15deg);
+
+    animation: jerseySweep 6s ease-in-out infinite;
+}
+
+@keyframes jerseySweep {
+    0% {
+        left: -45%;
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    85% {
+        opacity: 1;
+    }
+
+    100% {
+        left: 120%;
+        opacity: 0;
+    }
+}
+
+/* Garis cahaya tipis */
+.jersey-card::after {
+    content: "";
+    position: absolute;
+
+    left: 5%;
+    right: 5%;
+    top: 50%;
+
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 160, 255, .35),
+        transparent
+    );
+
+    box-shadow: 0 0 12px rgba(0, 150, 255, .25);
+
+    animation: jerseyLine 3s ease-in-out infinite alternate;
+}
+
+@keyframes jerseyLine {
+    from {
+        opacity: .25;
+        transform: scaleX(.7);
+    }
+
+    to {
+        opacity: .8;
+        transform: scaleX(1);
+    }
+}
+
+/* Jersey */
+.jersey-image {
+    position: relative;
+    z-index: 2;
+
+    width: 280px;
+    height: 320px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    animation: jerseyFloat 4s ease-in-out infinite;
+}
+
+.jersey-image::before {
+    content: "";
+    position: absolute;
+
+    width: 230px;
+    height: 230px;
+
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle,
+        rgba(0, 150, 255, .22),
+        transparent 68%
+    );
+
+    filter: blur(15px);
+    z-index: -1;
+
+    animation: jerseyAura 3s ease-in-out infinite alternate;
+}
+
+.jersey-image img {
+    max-width: 100%;
+    max-height: 100%;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(0 0 10px rgba(0, 150, 255, .25));
+
+    transition: .4s ease;
+}
+
+.jersey-card:hover .jersey-image {
+    animation-play-state: paused;
+}
+
+.jersey-card:hover .jersey-image img {
+    transform: scale(1.06);
+
+    filter:
+        drop-shadow(0 0 25px rgba(0, 170, 255, .65));
+}
+
+@keyframes jerseyFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes jerseyAura {
+    from {
+        transform: scale(.8);
+        opacity: .45;
+    }
+
+    to {
+        transform: scale(1.15);
+        opacity: 1;
+    }
+}
+
+/* Tulisan */
+.jersey-info {
+    position: relative;
+    z-index: 3;
+}
+
+.jersey-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: #58baff;
+
+    text-shadow: 0 0 12px rgba(0, 160, 255, .5);
+}
+
+.jersey-info h3 {
+    margin: 10px 0;
+
+    font-size: 40px;
+    font-weight: 900;
+
+    color: #fff;
+
+    text-shadow:
+        0 0 10px rgba(255,255,255,.15),
+        0 0 25px rgba(0, 140, 255, .25);
+}
+
+.jersey-info p {
+    margin: 0;
+
+    color: rgba(255,255,255,.55);
+    letter-spacing: 1px;
+}
+
+/* HP */
+@media (max-width: 700px) {
+
+    .jersey-section {
+        padding: 60px 15px;
+    }
+
+    .jersey-card {
+        min-height: 500px;
+        flex-direction: column;
+        gap: 15px;
+        padding: 30px 15px;
+    }
+
+    .jersey-image {
+        width: 220px;
+        height: 260px;
+    }
+
+    .jersey-info {
+        text-align: center;
+    }
+
+    .jersey-info h3 {
+        font-size: 28px;
+    }
+     }
