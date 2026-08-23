@@ -1778,3 +1778,216 @@ body::after {
         font-size: 28px;
     }
      }
+/* =========================
+   TOURNAMENT
+========================= */
+
+.tournament-section {
+    position: relative;
+    padding: 80px 20px;
+    overflow: hidden;
+}
+
+.tournament-card {
+    position: relative;
+    max-width: 900px;
+    min-height: 300px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 50px;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    border-radius: 24px;
+    border: 1px solid rgba(0, 150, 255, .25);
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(0, 130, 255, .18),
+            transparent 55%
+        ),
+        linear-gradient(
+            110deg,
+            #020817,
+            #082340,
+            #020817
+        );
+
+    box-shadow:
+        0 0 40px rgba(0, 120, 255, .12),
+        inset 0 0 70px rgba(0, 120, 255, .06);
+
+    transition: .4s ease;
+}
+
+.tournament-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 0 50px rgba(0, 140, 255, .22),
+        inset 0 0 80px rgba(0, 120, 255, .08);
+}
+
+/* cahaya bergerak */
+
+.tournament-card::before {
+    content: "";
+    position: absolute;
+
+    width: 35%;
+    height: 160%;
+
+    top: -30%;
+    left: -50%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(70, 190, 255, .18),
+        rgba(120, 220, 255, .35),
+        transparent
+    );
+
+    filter: blur(12px);
+    transform: rotate(15deg);
+
+    animation: tournamentLight 6s ease-in-out infinite;
+}
+
+@keyframes tournamentLight {
+    0% {
+        left: -50%;
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        left: 120%;
+        opacity: 0;
+    }
+}
+
+.tournament-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.tournament-status {
+    display: inline-block;
+
+    padding: 7px 15px;
+    margin-bottom: 15px;
+
+    border: 1px solid rgba(0, 160, 255, .35);
+    border-radius: 50px;
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 3px;
+
+    color: #62c3ff;
+
+    background: rgba(0, 120, 255, .08);
+}
+
+.tournament-content h3 {
+    margin: 5px 0 12px;
+
+    font-size: 38px;
+    font-weight: 900;
+    letter-spacing: 2px;
+
+    color: white;
+
+    text-shadow:
+        0 0 15px rgba(0, 140, 255, .35);
+}
+
+.tournament-content p {
+    max-width: 550px;
+    margin: 0 auto 25px;
+
+    line-height: 1.7;
+    color: rgba(255,255,255,.6);
+}
+
+/* BUTTON */
+
+.tournament-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 13px 28px;
+
+    border-radius: 10px;
+
+    color: white;
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+
+    background: linear-gradient(
+        90deg,
+        #006eff,
+        #00aaff
+    );
+
+    box-shadow:
+        0 0 20px rgba(0, 130, 255, .25);
+
+    transition: .3s ease;
+}
+
+.tournament-btn span {
+    font-size: 18px;
+    transition: .3s ease;
+}
+
+.tournament-btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 0 30px rgba(0, 150, 255, .5);
+}
+
+.tournament-btn:hover span {
+    transform: translateX(5px);
+}
+
+/* HP */
+
+@media (max-width: 600px) {
+
+    .tournament-section {
+        padding: 60px 15px;
+    }
+
+    .tournament-card {
+        min-height: 280px;
+        padding: 35px 20px;
+    }
+
+    .tournament-content h3 {
+        font-size: 27px;
+    }
+
+    .tournament-content p {
+        font-size: 14px;
+    }
+}
