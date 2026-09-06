@@ -495,6 +495,344 @@ function checkApkPassword() {
         <p class="eyebrow">THE SQUAD</p>
         <h2>MAIN ROSTER</h2>
 </div>
+      <!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TNEX Player Card</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    background: #05070d;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+/* KARTU */
+.player-card {
+    width: 900px;
+    max-width: 100%;
+    min-height: 520px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    background:
+        radial-gradient(circle at 85% 15%, rgba(0, 140, 255, .25), transparent 30%),
+        linear-gradient(135deg, #080b13, #101722 55%, #05070c);
+    border: 1px solid rgba(0, 174, 255, .55);
+    border-radius: 24px;
+    box-shadow:
+        0 0 35px rgba(0, 140, 255, .18),
+        inset 0 0 30px rgba(0, 140, 255, .04);
+}
+
+/* GARIS DEKORASI */
+.player-card::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 3px;
+    background: #00aaff;
+    transform: rotate(-35deg);
+    top: 40px;
+    right: -180px;
+    box-shadow: 0 0 15px #00aaff;
+}
+
+.player-card::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border: 1px solid rgba(0, 170, 255, .15);
+    border-radius: 50%;
+    right: -120px;
+    bottom: -150px;
+}
+
+/* BAGIAN FOTO */
+.photo-section {
+    width: 40%;
+    min-height: 520px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    background: linear-gradient(
+        145deg,
+        rgba(0, 119, 255, .18),
+        transparent 65%
+    );
+}
+
+.photo-frame {
+    width: 260px;
+    height: 350px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #00aaff;
+    border-radius: 18px;
+    box-shadow: 0 0 25px rgba(0, 170, 255, .35);
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* BADGE */
+.card-title {
+    position: absolute;
+    top: 25px;
+    left: 30px;
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: #7bd7ff;
+}
+
+.team-name {
+    position: absolute;
+    bottom: 25px;
+    left: 30px;
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+/* DATA */
+.info-section {
+    flex: 1;
+    padding: 45px 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.small-title {
+    font-size: 12px;
+    letter-spacing: 4px;
+    color: #62ceff;
+    margin-bottom: 5px;
+}
+
+.player-name {
+    font-size: 38px;
+    font-weight: 900;
+    margin-bottom: 28px;
+    letter-spacing: 1px;
+}
+
+.biodata {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 13px 25px;
+}
+
+.data-item {
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255,255,255,.12);
+}
+
+.data-label {
+    display: block;
+    color: #6dbce0;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    margin-bottom: 5px;
+}
+
+.data-value {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.role {
+    color: #00b7ff;
+}
+
+/* FOOTER */
+.footer {
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255,255,255,.12);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.slogan {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #8fa4b2;
+}
+
+.card-number {
+    font-size: 22px;
+    font-weight: 900;
+    color: #00aaff;
+}
+
+/* HP */
+@media (max-width: 700px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .player-card {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .photo-section {
+        width: 100%;
+        min-height: 390px;
+        padding: 55px 25px 25px;
+    }
+
+    .photo-frame {
+        width: 210px;
+        height: 285px;
+    }
+
+    .card-title {
+        top: 20px;
+        left: 25px;
+    }
+
+    .team-name {
+        display: none;
+    }
+
+    .info-section {
+        padding: 30px 25px;
+    }
+
+    .player-name {
+        font-size: 30px;
+    }
+
+    .biodata {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="player-card">
+
+    <!-- FOTO -->
+    <div class="photo-section">
+
+        <div class="card-title">
+            KARTU PELAJAR • PLAYER ID
+        </div>
+
+        <div class="photo-frame">
+            <!-- GANTI FOTO DI SINI -->
+            <img src="nevtryz.jpg" alt="Foto Pemain">
+        </div>
+
+        <div class="team-name">
+            TNEX
+        </div>
+
+    </div>
+
+
+    <!-- DATA PEMAIN -->
+    <div class="info-section">
+
+        <div class="small-title">
+            TNEX ESPORTS
+        </div>
+
+        <!-- GANTI NAMA DI SINI -->
+        <div class="player-name">
+            NevTryz
+        </div>
+
+        <div class="biodata">
+
+            <div class="data-item">
+                <span class="data-label">NORKES</span>
+                <span class="data-value">07</span>
+            </div>
+
+            <div class="data-item">
+                <span class="data-label">ROLE</span>
+                <span class="data-value role">MID LANER</span>
+            </div>
+
+            <div class="data-item">
+                <span class="data-label">TEMPAT, TANGGAL LAHIR</span>
+                <span class="data-value">Indonesia, 12 September 2005</span>
+            </div>
+
+            <div class="data-item">
+                <span class="data-label">ALAMAT</span>
+                <span class="data-value">Indonesia</span>
+            </div>
+
+            <div class="data-item">
+                <span class="data-label">NO. TELEPON</span>
+                <span class="data-value">08XXXXXXXXXX</span>
+            </div>
+
+            <div class="data-item">
+                <span class="data-label">MAKES</span>
+                <span class="data-value">Ayam Geprek</span>
+            </div>
+
+            <div class="data-item">
+                <span class="data-label">MIKES</span>
+                <span class="data-value">Es Teh</span>
+            </div>
+
+            <div class="data-item">
+                <span class="data-label">MUSES</span>
+                <span class="data-value">-</span>
+            </div>
+
+            <div class="data-item">
+                <span class="data-label">FILKES</span>
+                <span class="data-value">-</span>
+            </div>
+
+        </div>
+
+        <div class="footer">
+            <div class="slogan">
+                #SATUIN • PLAY · IMPROVE · WIN
+            </div>
+
+            <div class="card-number">
+                TNEX
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
       <div class="cards">
   <article class="player">
   <img src="nevtryz-roster.jpg" alt="NevTryz"
