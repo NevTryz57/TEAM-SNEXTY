@@ -6,6 +6,337 @@
   <title>TEAM SNEXTY — Mobile Legends Esports</title>
   <link rel="stylesheet" href="style.css">
 </head>
+  <!-- DOWNLOAD APK -->
+<button type="button" class="btn apk-btn" onclick="openApkGate()">
+  📱 DOWNLOAD APK
+</button>
+
+<!-- PASSWORD POPUP -->
+<div id="apkGate" class="apk-gate">
+  <div class="apk-overlay" onclick="closeApkGate()"></div>
+
+  <div class="apk-box">
+    <button class="apk-close" onclick="closeApkGate()">×</button>
+
+    <div class="apk-icon">📱</div>
+
+    <div class="apk-small">TEAM SNEXTY</div>
+    <h2>DOWNLOAD APK</h2>
+
+    <p>
+      Masukkan sandi untuk membuka akses download
+      aplikasi TEAM SNEXTY.
+    </p>
+
+    <input
+      id="apkPassword"
+      type="password"
+      placeholder="Masukkan sandi"
+    >
+
+    <div id="apkError"></div>
+
+    <button class="apk-unlock" onclick="checkApkPassword()">
+      UNLOCK DOWNLOAD →
+    </button>
+
+    <!-- Muncul kalau password benar -->
+    <div id="apkDownload" style="display:none;">
+      <div class="apk-success">
+        ✓ AKSES DIBUKA
+      </div>
+
+      <a
+        href="TEAM-SNEXTY.apk"
+        download
+        class="apk-real-download"
+      >
+        DOWNLOAD TEAM SNEXTY APK
+      </a>
+    </div>
+  </div>
+</div>
+
+<style>
+/* TOMBOL DOWNLOAD */
+.apk-btn {
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(135deg, #07529d, #008cff);
+  border: 1px solid rgba(80,180,255,.5);
+  box-shadow: 0 0 25px rgba(0,130,255,.2);
+}
+
+.apk-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0,130,255,.35);
+}
+
+/* POPUP */
+.apk-gate {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.apk-gate.show {
+  display: flex;
+}
+
+.apk-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,5,15,.85);
+  backdrop-filter: blur(10px);
+}
+
+/* BOX */
+.apk-box {
+  position: relative;
+  z-index: 2;
+  width: min(420px, 100%);
+  padding: 32px 25px;
+  text-align: center;
+
+  border: 1px solid rgba(40,160,255,.4);
+  border-radius: 22px;
+
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(0,130,255,.2),
+      transparent 45%
+    ),
+    linear-gradient(145deg,#0a203b,#030912);
+
+  box-shadow:
+    0 20px 70px rgba(0,0,0,.6),
+    0 0 40px rgba(0,120,255,.15);
+}
+
+.apk-close {
+  position: absolute;
+  right: 14px;
+  top: 10px;
+
+  width: 35px;
+  height: 35px;
+
+  border: 0;
+  border-radius: 10px;
+
+  background: rgba(255,255,255,.05);
+  color: white;
+
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.apk-icon {
+  width: 65px;
+  height: 65px;
+
+  margin: auto;
+  margin-bottom: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 18px;
+
+  background: rgba(0,120,255,.12);
+  border: 1px solid rgba(50,170,255,.4);
+
+  font-size: 28px;
+
+  box-shadow: 0 0 25px rgba(0,130,255,.2);
+}
+
+.apk-small {
+  color: #45b1ff;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 4px;
+}
+
+.apk-box h2 {
+  margin: 7px 0;
+  color: white;
+  font-size: 28px;
+}
+
+.apk-box p {
+  color: #8297b1;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* INPUT */
+#apkPassword {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 13px;
+
+  margin-top: 10px;
+
+  border-radius: 11px;
+  border: 1px solid rgba(80,160,220,.3);
+
+  outline: none;
+
+  background: rgba(0,10,25,.8);
+  color: white;
+
+  font-size: 13px;
+}
+
+#apkPassword:focus {
+  border-color: #299fff;
+  box-shadow: 0 0 20px rgba(0,140,255,.15);
+}
+
+/* ERROR */
+#apkError {
+  min-height: 18px;
+  margin-top: 7px;
+
+  color: #ff7185;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+/* UNLOCK */
+.apk-unlock {
+  width: 100%;
+
+  padding: 13px;
+
+  border: 1px solid rgba(70,170,255,.5);
+  border-radius: 11px;
+
+  background: linear-gradient(135deg,#07519b,#0089ed);
+
+  color: white;
+
+  font-weight: bold;
+  font-size: 11px;
+
+  cursor: pointer;
+}
+
+.apk-unlock:hover {
+  filter: brightness(1.15);
+}
+
+/* BERHASIL */
+.apk-success {
+  margin-top: 15px;
+  padding: 10px;
+
+  border-radius: 9px;
+
+  color: #65e0af;
+  background: rgba(20,180,110,.08);
+
+  border: 1px solid rgba(20,180,110,.25);
+
+  font-size: 10px;
+  font-weight: bold;
+}
+
+/* DOWNLOAD ASLI */
+.apk-real-download {
+  display: block;
+
+  margin-top: 10px;
+  padding: 13px;
+
+  border-radius: 11px;
+
+  background: linear-gradient(135deg,#087cdb,#00a2ff);
+
+  color: white;
+  text-decoration: none;
+
+  font-size: 11px;
+  font-weight: bold;
+}
+</style>
+
+<script>
+/* =========================
+   PASSWORD APK
+   ========================= */
+
+const APK_PASSWORD = "SNEXTY2026";
+
+
+function openApkGate() {
+
+  document
+    .getElementById("apkGate")
+    .classList.add("show");
+
+  document
+    .getElementById("apkPassword")
+    .value = "";
+
+  document
+    .getElementById("apkError")
+    .textContent = "";
+
+  document
+    .getElementById("apkDownload")
+    .style.display = "none";
+
+}
+
+
+function closeApkGate() {
+
+  document
+    .getElementById("apkGate")
+    .classList.remove("show");
+
+}
+
+
+function checkApkPassword() {
+
+  const password =
+    document.getElementById("apkPassword").value;
+
+  const error =
+    document.getElementById("apkError");
+
+  const download =
+    document.getElementById("apkDownload");
+
+
+  if (password === APK_PASSWORD) {
+
+    error.textContent = "";
+
+    download.style.display = "block";
+
+  } else {
+
+    error.textContent =
+      "❌ Sandi salah!";
+
+    download.style.display =
+      "none";
+
+  }
+
+}
+</script>
 <body>
   <header class="navbar">
   <a class="brand" href="#home">
