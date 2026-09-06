@@ -2354,3 +2354,447 @@ body::after {
         min-width: 210px;
     }
 }
+
+/* =========================
+   TNEX PLAYER CARD
+   ========================= */
+
+.player-card {
+    width: 100%;
+    max-width: 1100px;
+    min-height: 650px;
+    margin: 30px auto;
+    padding: 35px;
+
+    position: relative;
+    overflow: hidden;
+
+    display: grid;
+    grid-template-columns: 38% 62%;
+    gap: 35px;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(0, 119, 255, .20),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 90%,
+            rgba(0, 119, 255, .18),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #020812,
+            #06182c 50%,
+            #01050b
+        );
+
+    border: 2px solid #087cff;
+    border-radius: 28px;
+
+    box-shadow:
+        0 0 30px rgba(0, 119, 255, .35),
+        inset 0 0 60px rgba(0, 119, 255, .08);
+
+    color: white;
+}
+
+/* garis biru bagian atas */
+.player-card::before {
+    content: "";
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 5px;
+
+    background: #008cff;
+
+    box-shadow: 0 0 20px #008cff;
+}
+
+/* dekorasi sudut */
+.player-card::after {
+    content: "";
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    right: -80px;
+    bottom: -80px;
+
+    border: 2px solid rgba(0, 140, 255, .25);
+    transform: rotate(25deg);
+}
+
+
+/* =========================
+   BAGIAN FOTO
+   ========================= */
+
+.photo-section {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 570px;
+}
+
+/* FOTO */
+.photo-frame {
+    width: 100%;
+    max-width: 350px;
+    height: 470px;
+
+    position: relative;
+    overflow: hidden;
+
+    border: 3px solid #078cff;
+
+    border-radius: 8px;
+
+    background: #020812;
+
+    box-shadow:
+        0 0 25px rgba(0, 140, 255, .4),
+        inset 0 0 25px rgba(0, 140, 255, .15);
+}
+
+.photo-frame::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    border: 10px solid transparent;
+
+    pointer-events: none;
+
+    z-index: 2;
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* =========================
+   JUDUL
+   ========================= */
+
+.card-title {
+    position: absolute;
+
+    top: 5px;
+    left: 0;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    letter-spacing: 4px;
+
+    color: #008cff;
+}
+
+.team-name {
+    position: absolute;
+
+    left: 0;
+    bottom: 5px;
+
+    font-size: 32px;
+    font-weight: 900;
+
+    letter-spacing: 5px;
+
+    color: white;
+
+    text-shadow:
+        0 0 10px rgba(0, 140, 255, .7);
+}
+
+
+/* =========================
+   INFORMASI PEMAIN
+   ========================= */
+
+.info-section {
+    position: relative;
+    z-index: 3;
+
+    padding-top: 15px;
+}
+
+/* TNEX ESPORTS */
+.small-title {
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 5px;
+
+    color: #008cff;
+
+    margin-bottom: 5px;
+}
+
+/* NAMA */
+.player-name {
+    font-size: 46px;
+
+    font-weight: 900;
+
+    margin: 0 0 30px;
+
+    color: white;
+
+    text-shadow:
+        0 0 12px rgba(255,255,255,.15);
+}
+
+
+/* =========================
+   BOX BIODATA
+   ========================= */
+
+.biodata {
+    position: relative;
+
+    padding: 35px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 25px 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0, 15, 30, .95),
+            rgba(2, 8, 18, .98)
+        );
+
+    border: 2px solid #087cff;
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 0 20px rgba(0, 119, 255, .15),
+        inset 0 0 30px rgba(0, 119, 255, .05);
+}
+
+/* garis dekorasi box */
+.biodata::before {
+    content: "";
+
+    position: absolute;
+
+    top: -2px;
+    right: 30px;
+
+    width: 150px;
+    height: 3px;
+
+    background: #00aaff;
+
+    box-shadow: 0 0 12px #00aaff;
+}
+
+
+/* =========================
+   DATA
+   ========================= */
+
+.data-item {
+    min-width: 0;
+
+    padding-bottom: 12px;
+
+    border-bottom:
+        1px solid rgba(0, 140, 255, .18);
+}
+
+.data-label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: #8aa6bd;
+}
+
+.data-value {
+    display: block;
+
+    font-size: 17px;
+
+    font-weight: 800;
+
+    color: #f4f8ff;
+
+    word-break: break-word;
+}
+
+.data-value.role {
+    color: #00aaff;
+
+    text-shadow:
+        0 0 10px rgba(0, 170, 255, .45);
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+.footer {
+    margin-top: 25px;
+
+    padding-top: 20px;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    border-top:
+        1px solid rgba(0, 140, 255, .25);
+}
+
+.slogan {
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    color: #8ca4b7;
+}
+
+.card-number {
+    font-size: 30px;
+
+    font-weight: 900;
+
+    letter-spacing: 4px;
+
+    color: #008cff;
+
+    text-shadow:
+        0 0 15px rgba(0, 140, 255, .6);
+}
+
+
+/* =========================
+   RESPONSIVE HP
+   ========================= */
+
+@media (max-width: 800px) {
+
+    .player-card {
+        grid-template-columns: 1fr;
+
+        width: 100%;
+
+        padding: 22px;
+
+        gap: 20px;
+    }
+
+    .photo-section {
+        min-height: auto;
+
+        padding-top: 35px;
+    }
+
+    .photo-frame {
+        width: 270px;
+        height: 360px;
+    }
+
+    .card-title {
+        top: 0;
+        left: 0;
+    }
+
+    .team-name {
+        display: none;
+    }
+
+    .info-section {
+        padding-top: 5px;
+    }
+
+    .player-name {
+        font-size: 34px;
+
+        margin-bottom: 20px;
+    }
+
+    .biodata {
+        grid-template-columns: 1fr;
+
+        padding: 25px;
+
+        gap: 18px;
+    }
+
+    .data-value {
+        font-size: 15px;
+    }
+
+    .footer {
+        flex-direction: column;
+
+        gap: 15px;
+
+        align-items: flex-start;
+    }
+}
+
+
+/* HP KECIL */
+@media (max-width: 450px) {
+
+    .player-card {
+        padding: 15px;
+
+        border-radius: 20px;
+    }
+
+    .photo-frame {
+        width: 220px;
+        height: 300px;
+    }
+
+    .biodata {
+        padding: 20px;
+    }
+
+    .player-name {
+        font-size: 29px;
+    }
+}
